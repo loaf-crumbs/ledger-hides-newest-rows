@@ -1,0 +1,4 @@
+- Walk every page from first to last and keep a tally. The newest ten rows never appear anywhere, and there's an empty page dangling off the end. The whole window is shifted by exactly one page — that's a strong hint about where to look.
+- The pager labels its first page "Page 1," and the page number rides along in the request as `?page=1`. When that number reaches the data layer, what does it get multiplied by — and where does that put the start of the very first page?
+- Open `lib/db.js` and read the slice: `start = page * pageSize`. Trace it for page 1 with a page size of 10. The window opens at row 10, not row 0, so the first ten rows fall off the front and the math runs one page past the end.
+- A 1-based page number has to map to a 0-based starting row. Page 1 should start at offset 0, page 2 at offset 10, and so on. Adjust the arithmetic so the first page begins at the top of the list.

@@ -1,0 +1,4 @@
+- Page one shows the ten most recent transactions, newest at the top
+- Every transaction appears on exactly one page — none skipped, none repeated
+- The last page shows the oldest transactions and is never blank
+- The "Showing X–Y of 25" count matches the rows actually on the page

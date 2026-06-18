@@ -1,0 +1,109 @@
+* { box-sizing: border-box; }
+
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --line: #262b36;
+  --text: #e7e9ee;
+  --muted: #8b93a7;
+  --accent: #7dd3a8;
+}
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.shell { max-width: 820px; margin: 0 auto; padding: 0 20px 64px; }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+
+.logo { font-weight: 700; letter-spacing: 0.5px; }
+
+.topbar nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
+}
+.topbar nav a.active { color: var(--text); }
+
+.activity-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+h1 { font-size: 22px; margin: 0; }
+
+.count { color: var(--muted); font-size: 13px; }
+
+.ledger {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.ledger th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ledger td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ledger .date { color: var(--muted); white-space: nowrap; }
+.ledger .amount { text-align: right; font-variant-numeric: tabular-nums; }
+.ledger th.amount { text-align: right; }
+.ledger .credit { color: var(--accent); }
+.ledger .empty { color: var(--muted); text-align: center; padding: 28px 12px; }
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.pager button {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.pager button:hover:not(:disabled) { border-color: var(--accent); }
+.pager button:disabled { opacity: 0.4; cursor: default; }
+
+.page-of { color: var(--muted); font-size: 13px; }
+
+.error {
+  background: #2a1517;
+  border: 1px solid #5b2b2f;
+  color: #f1b0b4;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+}

@@ -1,0 +1,5 @@
+An account ledger lists recent transactions, newest first, ten to a page, with a simple "Newer / Older" pager at the bottom. There are twenty-five transactions in the database and the header promises "Showing 1–10 of 25" when you land on the first page.
+
+Except page one doesn't begin where it should. The most recent transaction — today's payout, the one you'd expect at the very top — is missing, and so are the nine entries behind it. The list opens partway down the timeline, already a week and a half in the past. Page through to the end and the count never adds up: the final page comes back empty, an entire page of nothing hanging off the bottom of the ledger.
+
+Hit `/api/transactions?page=1` directly and the same short, shifted window comes back, so this isn't the table rendering or the pager buttons. Nothing errors, nothing 500s, and every row that does show is correct and in the right order. The data is all there in `lib/db.js` — twenty-five rows, complete. It's purely a question of which slice each page hands back.
