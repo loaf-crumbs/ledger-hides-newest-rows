@@ -1,5 +1,5 @@
 {
-  "title": "The ledger that hides its newest rows",
+  "title": "Ledger that hides its newest rows",
   "tagline": "Page one starts ten days in the past, and the last page is blank. Every transaction is in the database.",
   "difficulty": "soft",
   "stack": "next",
